@@ -7,8 +7,10 @@ $con = $db->conectar();
 $sql = $con->prepare("SELECT id_Prod, nombre, precio FROM productos WHERE activo=1");
 $sql->execute();
 $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
-
-//session_destroy();
+if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 
 ?>
 
@@ -28,25 +30,51 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 <body>
 
     <header>
+        
         <div class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a href="index.php" class="navbar-brand">
+                <a href="#" class="navbar-brand">
                     <strong>Dulceria "El Inge"</strong>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>
+                </button><nav>
                 <div class="collapse navbar-collapse navbar-dark" id="navbarHeader">
+                    
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a href="index.php" class="nav-link active">Catalogo</a>
+                            <a href="#" class="nav-link active">Catalogo</a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Cerrar Sesion</a>
+                            <a href="#" class="nav-link">Contacto</a>
                         </li>
                     </ul>
+                    
+                    <li>
 
+                    
+                           <?php
+                           if(!isset($_SESSION['user_id'])){
+                            echo ' <a href="l.html" class="btn btn-primary">
+                            Login <span id="num_cart" class="badge bg-secondary"></span>
+                        </a>';
+
+                        echo ' <a href="registro.html" class="btn btn-primary">
+                            Register <span id="num_cart" class="badge bg-secondary"></span>
+                        </a>';
+                        } else {
+                           
+                            echo ' <a href="" class="btn btn-primary">
+                            '.$_SESSION['user_id'].' <span id="num_cart" class="badge bg-secondary"></span>
+                            </a> <ul><a class="btn btn-primary" href="cerrar.php">cerrar session</a></ul>';
+                        }
+                        ?> 
+                        
+                       </li>
+                     
+                         
+                       
                     <a href="checkout.php" class="btn btn-primary">
                         Carrito <span id="num_cart" class="badge bg-secondary"><?php echo $num_cart; ?></span>
                     </a>
