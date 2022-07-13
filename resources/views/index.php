@@ -30,7 +30,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
     <header>
         <div class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a href="#" class="navbar-brand">
+                <a href="index.php" class="navbar-brand">
                     <strong>Dulceria "El Inge"</strong>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,11 +39,11 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                 <div class="collapse navbar-collapse navbar-dark" id="navbarHeader">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a href="#" class="nav-link active">Catalogo</a>
+                            <a href="index.php" class="nav-link active">Catalogo</a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Contacto</a>
+                            <a href="#" class="nav-link">Cerrar Sesion</a>
                         </li>
                     </ul>
 

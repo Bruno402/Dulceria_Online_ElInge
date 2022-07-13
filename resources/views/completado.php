@@ -1,11 +1,11 @@
 <?php
 
-require 'config/config.php';
-require 'config/database.php';
+require '../../config/config.php';
+require '../../config/database.php';
 $db = new Database();
 $con = $db->conectar();
 
-$id_transaccion = isset($_GET['key']) ? $_GET['key'] : '0';
+$id_transaccion = isset($_GET["key"]) ? $_GET["key"] : "0";
 
 $error = '';
 
@@ -52,7 +52,7 @@ if ($id_transaccion == 0 || $id_transaccion == '') {
     <header>
         <div class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a href="#" class="navbar-brand">
+                <a href="index.php" class="navbar-brand">
                     <strong>Dulceria "El Inge"</strong>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,11 +61,11 @@ if ($id_transaccion == 0 || $id_transaccion == '') {
                 <div class="collapse navbar-collapse navbar-dark" id="navbarHeader">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a href="#" class="nav-link active">Catalogo</a>
+                            <a href="index.php" class="nav-link active">Catalogo</a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Contacto</a>
+                            <a href="#" class="nav-link">Cerrar Sesion</a>
                         </li>
                     </ul>
 
